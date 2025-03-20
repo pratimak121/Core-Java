@@ -21,6 +21,10 @@ public class Sample8
             System.out.println(m2.num);
 
         }
+        else
+        {
+          System.out.println("Insufficient arguments");
+        }
 
     }
 }
