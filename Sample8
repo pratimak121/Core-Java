@@ -1,0 +1,26 @@
+/* Program to define class and object of the class  */
+public class Sample8
+{
+    int num;
+    public Sample8()
+    {
+        num = 0;
+    }
+    public Sample8(int num)
+    {
+        this.num = num ;
+    }
+    public static void main(String[] args)
+    {
+        Sample8 m1 = new Sample8();
+        if(args.length > 0)
+        {
+            int i = Integer.parseInt(args[1]);
+            Sample8 m2 = new Sample8(i);
+            System.out.println(m1.num);
+            System.out.println(m2.num);
+
+        }
+
+    }
+}
