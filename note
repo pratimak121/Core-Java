@@ -1,0 +1,22 @@
+/* 1.jdk Installation
+ 2.set environment variable and path(to use javac, java commands) 
+ */
+
+/*Java Tools
+1.javac :- javac is the java compiler which compiles .java into .class file(i.e bytecode). If the program has syntax errors javac reports them. If the program is error-free, the output of this command is one or more .class files.
+Syntax - javac filename.java
+
+2.java :- This command starts java runtime environment, loads the specified .class file and executes the main method
+Syntax - java filename.java
+
+3.javadoc :- javadoc is a utility for generating HTML documentation directly from comments written in java source code. Javadoc comments have a special form but seems like an ordinary multiline comment to the compiler
+Syntax - javadoc [options][packagenames][sourcefiles][@files]
+
+javadoc creates the HTML documentation on the basis of javadoc tags used in the source code files
+
+4.jdb :- jdb helps ypu find and fix bugs in java langguage program. This debugger has limited functionality
+Syntax :- jdb [options][class][arguments]
+[options] -> command-line options
+[class] -> name of the class to begin debugging
+[arguments] -> arguments passed to the main() method class.
+*/
