@@ -1,0 +1,85 @@
+/* Write a menu driven program to perform the following operations on 
+multidimensional array ie matrix : 
+i. 
+Addition 
+ii. 
+iii. 
+iv. 
+Set C 
+Multiplication 
+Transpose of any matrix. 
+Exit  */
+
+
+public class A22
+{
+      private int num ;
+
+     A22()
+     {
+        this.num = 0;
+     }
+    
+     A22(int num)
+     {
+        this.num = num;
+     }
+
+     void isNegative()
+     {
+         if(this.num < 0)
+         {
+         System.out.println(" Negative");
+         }
+     }
+    
+     void isPositive()
+     {
+        if(this.num > 0)
+        {
+            System.out.println("Positive");
+
+        }
+     }
+     void isZero()
+     {
+        if(this.num==0)
+        {
+            System.out.println("Zero");
+        }
+     }
+        void isOdd()
+        {
+            if(this.num%2 != 0)
+            System.out.println("Odd");
+        }
+         void isEven()
+        {
+            if(this.num%2 == 0)
+            System.out.println("Even");
+        }
+        public static void main(String[] args)
+        {
+            try{
+            if(args.length > 0)
+            {
+            int n = Integer.parseInt(args[0]);
+            A22 a = new A22(n);
+            a.isNegative();
+            a.isPositive();
+            a.isEven();
+            a.isOdd();
+            a.isZero();
+            
+            }
+            else
+            {
+                System.out.println("Insufficient");
+            }
+            }
+            catch (NumberFormatException e)
+            {
+                System.out.println("Invalid input");
+            }
+        }    
+}
