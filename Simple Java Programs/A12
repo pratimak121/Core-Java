@@ -33,8 +33,10 @@ public class A12
 
     }
 }
-
+An instance variable in Java is a variable that is declared inside a class but outside any method, constructor, or block.
+Each object (instance) of the class has its own copy of the instance variables.
 /*
 Why use this?
-The this keyword refers to the current object instance. It's especially useful when the method or constructor parameter has the same name as the instance variable. Without this, Java would not know whether you're referring to the parameter or the instance variable.
+The this keyword refers to the current object instance. It's especially useful when the method or constructor parameter has the same name as the instance variable. 
+Without this, Java would not know whether you're referring to the parameter or the instance variable.
 */
