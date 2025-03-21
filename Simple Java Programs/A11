@@ -1,1 +1,26 @@
+/*
+ Using javap, view the methods of the following classes from the lang package: 
+java.lang.Object , java.lang.String and java.util.Scanner. and also Compile sample 
+program 8. Type the following command and view the bytecodes. javap -c MyClass. 
 
+*/
+
+public class Myclass
+{
+    public static void main(String[] args)
+    {
+        System.out.println("Hello,world");
+    }
+}
+
+/*
+output:
+
+1. View methods of classes with javap
+
+javap java.lang.Object
+javap java.lang.String
+javap java.util.Scanner
+
+2. View bytecode with -c option
+javap -c MyClass
