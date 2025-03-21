@@ -42,3 +42,8 @@ public class A21
     }
 
 }
+
+/* The SimpleDateFormat class is used for formatting and parsing dates.
+The Calendar class is used for manipulating and calculating time (e.g., adding days or calculating the week number).
+The Date class represents a specific instant in time, which can be formatted and manipulated.
+*/
