@@ -24,15 +24,18 @@ public class A12
     {
       A12 a = new A12(10,20);
       Scanner sc = new Scanner(System.in);
-      System.out.println("Enter num1 and num2 values :");
-      double num1 = sc.nextDouble();
-      double num2 = sc.nextDouble();
-      A12 b = new A12(num1,num2);
+      System.out.println("Enter length and breadth values :");
+      double l = sc.nextDouble();
+      double b = sc.nextDouble();
+      A12 a1 = new A12(l,b);
       System.out.println("Area of rectangle : " +a.CalculateArea());
-      System.out.println("Perimeter of rectangle"+ b.CalculatePerimeter());
+      System.out.println("Perimeter of rectangle :"+ a.CalculatePerimeter());
+      System.out.println("Area of rectangle : " +a1.CalculateArea());
+      System.out.println("Perimeter of rectangle :"+ a1.CalculatePerimeter());
 
     }
 }
+     
 An instance variable in Java is a variable that is declared inside a class but outside any method, constructor, or block.
 Each object (instance) of the class has its own copy of the instance variables.
 /*
