@@ -25,7 +25,7 @@ javap [options] class
 example - javap java.lang.String It is a diassembler which allows the bytecodes of a class file to be viewed when used with a classname  and the -c option.
 javap -c class
 
-java.lang is the core package in Java, and it is automatically imported into your program. It provides essential classes like String, Math, and Thread.
-java.util is a separate package that contains classes for working with collections, dates, time, and other utilities. You need to import it explicitly in your Java programs.
+java.lang is the core package in Java, and it is automatically imported into your program. It provides essential classes like String, Math,Object,System,Integer and Thread.
+java.util is a separate package that contains classes for working with collections, dates, time, and ArrayList,HashMap,Calender,other utilities. You need to import it explicitly in your Java programs.
 
 */
