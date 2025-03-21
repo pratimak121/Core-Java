@@ -9,3 +9,101 @@ Check the number is Armstrong or not.
 Exit 
 */
 
+import java.util.Scanner;
+public class A13
+{
+   public static double VolumeofCylinder(double rad, double height)
+    {
+     return 3.14 * rad * rad * height;
+      // Math.PI * Math.pow(rad, 2) * height;
+    }
+    long Factorial(int n)
+    {
+    long fact =1;
+     for(int i = 1; i<=n;i++)
+     {
+      fact = fact * i ;
+     }
+     return fact;
+    }
+    boolean  Armstrong(int num)
+    {
+     int temp = num,cnt=0,sum=0;
+      //cnt = String.valueOf(num).length();
+     
+     while(num!=0)
+     {
+      num =num/10;
+     cnt++;
+     
+     }
+     num=temp;
+      while(num!=0)
+     {
+        int rem = num %10;
+      sum += Math.pow(rem,cnt);
+       num /= 10 ;
+     }
+
+     return sum == temp ;
+     
+    }
+    
+
+    public static void main(String[] args)
+    {
+      Scanner sc = new Scanner(System.in);
+      int choice ;
+      A13 a = new A13();
+      do
+      {
+        System.out.println("Menu Options ");
+        System.out.println("1.Calulate the volume of cylinder. ");
+        System.out.println("2.Find the factorial of given number. ");
+        System.out.println("3.Check the number is Armstrong or not. ");
+        System.out.println("4.Exit");
+           choice = sc.nextInt();
+          switch(choice)
+          {
+           case 1 :
+            System.out.println("Enter Radius and height :");
+            double rad = sc.nextDouble();
+            double height = sc.nextDouble();
+            System.out.println("Volume of Cylinder" + VolumeofCylinder(rad,height));
+             break;
+             case 2 :
+                System.out.println("Enter number to find factorial :");
+                int num = sc.nextInt();
+                System.out.println("Facorial "+ a.Factorial(num));
+                break;
+              case 3 :
+                System.out.println("Enter number to check armstrong no :");
+                int num1 = sc.nextInt();
+                a.Armstrong(num1);
+                if(a.Armstrong(num1))
+                {
+                System.out.println(num1 + " is Armstrong number");
+                }
+                else
+                {
+                System.out.println(num1 +" is not Armstrong number");
+                }
+                  break;
+                case 4 :
+                    System.out.println("Exiting the program");
+                  break;
+                    default :
+                    System.out.println("Invalide choice , please enter correct choice");
+
+          }
+      }while(choice!= 4);
+        sc.close();
+      }
+    }
+/* String: A class that represents strings (sequences of characters).
+valueOf(): A static method of the String class that converts various types (like int, boolean, Object, etc.) into their string equivalent.
+
+Math: A utility class in Java that provides mathematical functions and constants.
+Math.PI: A constant that stores the value of π (approximately 3.14159) used for circle-related calculations and other mathematical operations.
+
+*/
