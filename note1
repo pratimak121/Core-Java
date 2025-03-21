@@ -19,4 +19,9 @@ Syntax :- jdb [options][class][arguments]
 [options] -> command-line options
 [class] -> name of the class to begin debugging
 [arguments] -> arguments passed to the main() method class.
+
+5.javap :- The javap tool allows  you to query any class and find out its list of methods and constants.
+javap [options] class 
+example - javap java.lang.String It is a diassembler which allows the bytecodes of a class file to be viewed when used with a classname  and the -c option.
+javap -c class
 */
