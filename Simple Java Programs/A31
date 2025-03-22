@@ -4,6 +4,7 @@ order.
 */
 
 import java.util.Scanner;
+import java.util.Arrays;
 public class A31
 {
     public static void main(String args[])
@@ -19,10 +20,15 @@ public class A31
          name[i] = sc.nextLine();
        }
        System.out.println("Country in descending order");
-       for(int i = name.length - 1 ;i>=0;i--)
-       {
-        System.out.println(name[i]);
-       }
+      // for(int i = name.length - 1 ;i>=0;i--)
+      // {
+       // System.out.println(name[i]);
+      // }
+      Arrays.sort(name,(a,b)-> b.compareTo(a));
+        for(String item :name)
+        {
+            System.out.println(item);
+        }
         sc.close();
     }
 
