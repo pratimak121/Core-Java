@@ -1,0 +1,89 @@
+/* Write a menu driven program to perform the following operations on 2D array: 
+i. 
+Sum of diagonal elements 
+ii. 
+iii. 
+iv. 
+Sum of upper diagonal elements 
+Sum of lower diagonal elements 
+Exit   */
+import java.util.Scanner;
+public class A32
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter size of matrix :");
+       int  n = sc.nextInt();
+        int[][] m = new int[n][n];
+        System.out.println("Accept matrix element :");
+        for(int i=0 ;i<m.length;i++)
+        {
+            for(int j=0;j<m.length;j++)
+            {
+            m[i][j] = sc.nextInt();    
+            }
+        }
+        int choice;
+        do
+        {
+            System.out.println("Menu Options : ");
+            System.out.println("1.Sum of diagonal elements \n 2.Sum of upper diagonal elements \n 3.Sum of lower diagonal elements \n 4.Exit");
+            System.out.println("Enter choice");
+            choice = sc.nextInt();
+            switch(choice)
+            {
+                case 1 :
+                    System.out.println("Sum of diagonal elements :" + SumOfDiagonal(m));
+                    break;
+                case 2 :
+                    System.out.println("Sum of upper diagonal elements :"+SumOfUpperDiagonal(m));
+                    break;
+                case 3 :
+                    System.out.println("Sum of lower diagonal elements :"+SumOfLowerDiagonal(m));
+                    break;
+                case 4 :
+                    System.out.println("Exiting the program");
+                    break;
+
+                default:
+                    System.out.println("Invalid input");                               
+
+            }
+         }while(choice!=4);
+         sc.close();
+    }    
+    public static int SumOfDiagonal(int[][] m)
+    {
+        int sum = 0 ;
+        for(int i = 0;i<m.length ;i++)
+        {1
+                sum+= m[i][i];
+        }
+        return sum;
+    }
+    public static int  SumOfUpperDiagonal(int[][] m)
+    {
+        int sum =0;
+        for(int i=0;i<m.length;i++)
+        {
+            for(int j=i+1 ;j<m.length; j++)
+            {
+                sum+= m[i][j];
+            }
+        }
+        return sum;
+    }
+    public static int  SumOfLowerDiagonal(int[][] m)
+    {
+        int sum =0;
+        for(int i=1;i<m.length;i++)
+        {
+            for(int j=0;j<i; j++)
+            {
+                sum+= m[i][j];
+            }
+        }
+        return sum;
+    }
+}
