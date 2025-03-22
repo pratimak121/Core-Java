@@ -1,0 +1,46 @@
+/*
+ Write a program to accept n names of country and display them in descending 
+order. 
+*/
+
+import java.util.Scanner;
+public class A31
+{
+    public static void main(String args[])
+    {
+       Scanner sc = new Scanner(System.in);
+       System.out.println("Enter number of country names count :");
+       int n = sc.nextInt();
+       sc.nextLine();
+       String[] name = new String[n];
+       System.out.println("Enter country names  :");
+       for(int i=0; i< name.length ; i++)
+       {
+         name[i] = sc.nextLine();
+       }
+       System.out.println("Country in descending order");
+       for(int i = name.length - 1 ;i>=0;i--)
+       {
+        System.out.println(name[i]);
+       }
+        sc.close();
+    }
+
+}
+/*
+1. Arrays.sort(countries, ...):
+This is the sort method from the Arrays class in Java. It sorts the array countries (which is a String[] array in this case).
+By default, it sorts in ascending order, but we can provide a custom sorting rule using a comparator.
+
+2. (a, b) -> b.compareTo(a):
+This is a lambda expression, which is a shorthand way to define an anonymous function (a function with no name). It represents the comparator for sorting.
+compareTo() is a method in the String class that compares two strings lexicographically (i.e., in alphabetical order).
+But here, we are using b.compareTo(a), which essentially reverses the natural order of comparison:
+
+If b is lexicographically greater than a, it returns a positive value.
+
+If b is lexicographically smaller than a, it returns a negative value.
+
+This reversal causes the array to be sorted in descending order (reverse alphabetical order).
+
+*/
