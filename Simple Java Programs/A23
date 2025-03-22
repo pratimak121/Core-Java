@@ -6,5 +6,200 @@ iii. Transpose of any matrix.
 iv. Exit
  */
 
+import java.util.Scanner;
+public class A23
+{
+    public static int[][] Addition(int[][] m1, int[][] m2)
+    {
+        int r1 = m1.length ;
+        int c1 = m1[0].length;
+        int r2 = m2.length ;
+        int c2 = m2[0].length ;
+
+        if(r1 == r2 && c1 == c2)
+       {
+        int[][] ans = new int[r1][c1];
+        
+        for(int i = 0 ;i<r1 ;i++)
+        {
+            for(int j=0 ;j<c1 ;j++)
+            {
+                ans[i][j] = m1[i][j] + m2[i][j] ;
+
+            }
+        }
+        return ans;
+        } 
+        else
+        {
+            System.out.println("Matrices must have same dimensions for addition");
+            return null;
+        }
+        
+    }
+    public static int[][] Multiplication(int[][] m1,int[][] m2)
+    {
+       int r1 = m1.length ;
+        int c1 = m1[0].length;
+        int r2 = m2.length ;
+        int c2 = m2[0].length ;
+        if(c1 == r2)
+        {
+        int[][] ans = new int[r1][c2];
+        for(int i=0;i<r1;i++)
+        {
+            for(int j=0;j<c2;j++)
+            {
+                ans[i][j]= 0; 
+                for(int k=0;k<c1;k++)
+                {
+                ans[i][j] += m1[i][k] * m2[k][j];
+                }
+            }
+        }
+        return ans;
+        }
+        else
+        {
+            System.out.println("Matrix Dimesions are not compatible for multiplication");
+         return null;     
+        }
+     }
+     public static int[][] Transponse(int[][] m1)
+     {
+        int r = m1.length;
+        int c = m1[0].length;
+     
+        int ans[][] = new int[r][c];
+        for(int i=0;i<r;i++)
+        {
+            for(int j=0;j<c;j++)
+            {
+             ans[j][i] = m1[i][j]; 
+            }
+        }
+     
+     return ans;
+     }
+
+     public static void Display(int[][] m)
+     {
+        int r = m.length;
+        int c = m[0].length;
+       
+       for(int i=0;i<r;i++)
+        {
+            for(int j=0;j<c;j++)
+            {
+             System.out.print(m[i][j] + " "); 
+            }
+            System.out.println();
+        }
+     
+     }
+    
+    public static void main(String[] args)
+    {
+    Scanner sc = new Scanner(System.in);
+     int[][] m1 = null;
+     int[][] m2 = null;
+    int choice;
+    do
+    {
+        System.out.println("Menu option");
+        System.out.println("1.Set Matrix A and B \n 2.Addition \n 3.Multiplication \n 4.Transpose of any matrix \n 5.Exit" );
+        System.out.println("Enter your choice (1-5)");
+         choice = sc.nextInt();
+        switch(choice)
+        {
+            case 1 :
+                 System.out.println("Enter number of rows :");
+                 int r = sc.nextInt();
+                System.out.println("Enter number of cloumns :");
+                int c = sc.nextInt();
+                m1 = new int[r][c];
+                 m2 = new int[r][c];
+                System.out.println("Enter elements of matrix m1 :");
+                for(int i = 0;i<r ;i++)
+                {
+                    for(int j =0 ; j<c ;j++)
+                    {
+                        m1[i][j] = sc.nextInt();
+                    }
+                }
+                 System.out.println("Enter number of rows :");
+                 int r2 = sc.nextInt();
+                System.out.println("Enter number of cloumns :");
+                int c2 = sc.nextInt();
+                System.out.println("Enter elements of matrix m2 :");
+                for(int i = 0;i<r2 ;i++)
+                {
+                    for(int j =0 ; j<c2 ;j++)
+                    {
+                        m2[i][j] = sc.nextInt();
+                    }
+                }
+                break;
+
+            case 2 :
+                if(m1!=null  && m2!=null)
+                {
+                System.out.println("Addition of matrix m1 and m2");
+                  int[][] ans = Addition(m1,m2);
+                  if(ans!=null)
+                  {
+                Display(ans);
+                  }
+                }
+                else
+                {
+                    System.out.println("Matrix A and B must be set");
+                }
+                break;
+                
+            case 3:
+                if(m1!=null && m2!=null)
+                {
+                    System.out.println("Multiplication of matrix m1 and m2");
+                    int[][] ans1 = Multiplication(m1,m2);
+                if(ans1!=null)
+                {
+                    Display(ans1);
+                }
+                }
+                else
+                {
+                System.out.println("Matrix A and B must be set");
+                }
+                    break;
+
+            case 4 :
+                if(m1!=null)
+                {
+                    System.out.println("Transpose of any matrix ");
+                   int[][] ans2 = Transponse(m1);
+                if(ans2!=null)
+                {
+                    Display(ans2);
+                }
+                }
+                else
+                {
+                    System.out.println("Matrix A must be set ");
+                }
+                    break;
+
+            case 5:
+                        System.out.println("Existing program");
+                        break;
+
+            default :
+                    System.out.println("Invalid input, please enter correct choice");
+               
+        }
+    }
+    while(choice != 5);        
+    }
+}
 
 
