@@ -26,3 +26,19 @@ public class Sample3
         }
     }
 }
+
+Option 1: Use try-catch block to handle the IOException
+catch (IOException e) {
+            // Handle IOException (like file reading issues, input/output problems)
+            System.out.println("An error occurred while reading input: " + e.getMessage());
+        } catch (NumberFormatException e) {
+            // Handle invalid integer input (like non-numeric input)
+            System.out.println("Invalid roll number format. Please enter a valid integer.");
+        }
+Option 2: Declare the Exception Using throws in the Method Signature
+ public static void main(String[] args) throws IOException
+
+Unreported Exception (Compilation Error): If you don’t handle a checked exception (like IOException), the compiler will throw an error, saying that the exception must either be caught or declared to be thrown.
+This is a compile-time error.
+
+Handled Exception (No Compilation Error): If you handle the exception using a try-catch block, or declare it with throws in the method signature, the compiler won't throw an error, and your program will compile and run successfully.
