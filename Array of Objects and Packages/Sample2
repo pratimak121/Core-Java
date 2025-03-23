@@ -23,6 +23,7 @@ public static void main(String[] args)
     Sample2 s1 = new Sample2(1,"A");
     Sample2 s2 = new Sample2(2,"B");
     Sample2.assignTeacher("ABC");
+ Sample2.assignTeacher("XYZ");
     System.out.println(s1);
     System.out.println(s2);
 }
