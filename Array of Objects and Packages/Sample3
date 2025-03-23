@@ -1,0 +1,28 @@
+/* To read Student roll number and name from the console 
+and display them (Using BufferedReader).  */
+import java.io.* ;
+public class Sample3
+{
+    public static void main(String[] args)
+    {
+        try
+        {
+        int rollNumber;
+        String name;
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Enter the rollnumber: ");
+        rollNumber = Integer.parseInt(br.readLine());
+        System.out.println("Enter the name: ");
+        name = br.readLine();
+        System.out.println("RollNumber= " + rollNumber);
+        System.out.println("Name= "+ name);
+    }
+        catch (IOException e) {
+            // Handle IOException (like file reading issues, input/output issue)
+            System.out.println("An error occurred while reading input: " + e.getMessage());
+        } catch (NumberFormatException e) {
+            // Handle invalid integer input (like non-numeric input)
+            System.out.println("Invalid roll number format. Please enter a valid integer.");
+        }
+    }
+}
