@@ -1,0 +1,32 @@
+/*  public static void main(String[] args) throws IOException */
+import java.util.Scanner;
+class Sample4
+{
+    public static void main(String[] args) throws Exception
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter your rollno and name: ");
+        int rollno = sc.nextInt();
+      //  Float no = sc.nextFloat();
+        // String name = sc.nextLine();  needs to read leftover \n character
+        String name = sc.next();
+       
+        System.out.println("Rollno: "+rollno +" "+ "Name: "+name);
+        sc.close();
+    }
+}
+
+When you call nextInt() or nextDouble(), the method only reads the input value, but it does not consume the newline character that the user presses after entering the value.
+
+This leftover newline character remains in the input buffer. The next time you call nextLine(), it will read the leftover newline character instead of the actual input that the user may enter next.
+Call nextLine() after a primitive input method to consume the leftover newline before reading the next line of text.
+
+Difference next() & nextLine() :
+next(): Reads a single word or token from the input (stops at the first whitespace).
+
+nextLine(): Reads an entire line, including spaces, and consumes the newline character when the user presses Enter.
+
+Buffer:
+Reading Data: When data is read (e.g., from a file), it is first loaded into a buffer in memory. The program then reads from the buffer, which is faster than repeatedly accessing the disk.
+
+Writing Data: When writing data (e.g., to a file), the data is first stored in a buffer in memory and then written to the destination in a single operation when the buffer is full or when the stream is closed.
