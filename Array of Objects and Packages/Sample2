@@ -29,3 +29,4 @@ public static void main(String[] args)
 }
 You used the toString() method to provide a string representation of the object when System.out.println() is called.
 The System.out.println() automatically calls the toString() method on the objects if it is overridden.
+Static variables are often used for properties that are common to all objects of a class, such as a counter 
