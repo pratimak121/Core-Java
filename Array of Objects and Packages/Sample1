@@ -1,2 +1,33 @@
 //To demonstrate Constructors and this keyword.
+class Sample
+{
+    int length;
+    int breadth;
+    Sample() //Default constructor
+    {
+        length = 0;
+        breadth = 0;
+    }
+    Sample(int length,int breadth) //parameterised constructor
+    {
+        this.length = length ;
+        this.breadth  = breadth ;
+    }
+    int area()
+    {
+        return length * breadth;
+    }
+}
+public class Sample1
+{
+       public static void main(String[] args)
+    {
+        Sample s = new Sample();
+        System.out.println("Area =" + s.area());
+        Sample s1 = new Sample(10,20);
+        Sample s2 = new Sample(20,30);
+        System.out.println("Area =" +s2.area());
 
+
+    }
+}
