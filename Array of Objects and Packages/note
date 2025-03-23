@@ -1,1 +1,158 @@
+1. General form of a class
+class Student
+{
+private int rollNumber;  //type instance-variable1
+private String name;     //type instance-variable2
+Student()    //Constructor
+{
+ rollNumber = 0;    
+ name = null ;
+}
+Student(int rollNumber, String name) //parameterised constructor
+{
+ this.rollNumber = rollNumber;
+this.name = name;
+}
+void display()  //type methodname(parameter-list)
+{
+System.out.println("Rollnumber ="+ rollNumber);
+System.out.println("Name="+name);
+}
+}
+
+2.Creating objects
+Synatx :
+ClassName referenceName;
+referenceName = new ClassName();
+OR
+ClassName referenceName = new ClassName();
+Example:
+Student s1 = new Student();
+Student s2 = new Student(10,"ABC");
+
+3.Constructor :
+Constructor is used to initialize the instance variables.
+It is called at the creation of new object
+
+Types of Constructors
+1.Default Constructor
+2.Parameterised Constructor
+
+Example :
+Student s1 = new Student();
+Student s2 = new Students(100,"XYZ");
+
+4. Overriding to String method of the Object class: 
+ The toString method gives a string representation of an object. To over-ride the 
+toString method for a user defined class.
+Example :
+class Student
+{
+  private int rollNumber;
+private String name;
+public String toString()
+{
+  return "RollNumber= " +rollNumber+"Name= "+name; //return string representation of an object
+}
+}
+}
+5. Declaring an array of references /object:
+Syntax :
+ClassName[] arrayName = new ClassName[size];
+Example :
+Student[] studentArray = new Student[10];
+
+6. Creating an array of objects:
+syntax:
+for each reference in the array
+{
+  create an object using new
+}
+Example :
+Student[] studentArray = new Student[10];
+for(i=0;i<10;i++)
+studentArray[i] = new Student();
+
+7.Wrapper classes:
+The wrapper class in Java provide the mechanism to convert primitive into object 
+and object into primitive.
+
+Method             Purpose
+Byte.parseByte     Returns byte equivalent of a String
+Short.parseShort   Return the short equivalent of a String
+Integer.parseInt   Returns the int eqivalent of a String
+Long.parseLong     Returns the long equivalent of a String
+Float.parseFloat   Returns the float eqivalent of a String
+Double.parseDouble Returns the double equivalent of a String
+
+Example 1: Autoboxing (int to Integer)
+Autoboxing is the automatic conversion of primitive types to their corresponding wrapper class objects.
+
+public class WrapperExample {
+    public static void main(String args[]) {
+        // Converting int into Integer
+        int a = 20;
+        Integer i = Integer.valueOf(a); // Converting int into Integer
+        Integer j = a;  // Autoboxing, compiler will write Integer.valueOf(a) internally
+        
+        System.out.println(a + " " + i + " " + j);
+    }
+}
+Integer.valueOf(a) explicitly converts the int value into an Integer object.
+
+Integer j = a; demonstrates autoboxing, where Java automatically converts the int into an Integer object.
+
+Example 2: Unboxing (Integer to int)
+Unboxing is the process of converting an object of a wrapper class to its corresponding primitive type.
+
+public class WrapperExample2 {
+    public static void main(String args[]) {
+        // Converting Integer to int
+        Integer a = new Integer(3);
+        int i = a.intValue();  // Explicit unboxing using intValue() method
+        int j = a;  // Unboxing, compiler will use a.intValue() internally
+        
+        System.out.println(a + " " + i + " " + j);
+    }
+}
+a.intValue() explicitly converts the Integer object to the int primitive.
+
+int j = a; demonstrates unboxing, where Java automatically converts the Integer object into an int.
+
+Additional Examples Using Other Wrapper Classes:
+Example 3: Converting String to Wrapper Classes
+
+public class WrapperParseExample {
+    public static void main(String args[]) {
+        String str = "100";
+        
+        // Convert String to different primitive types using parse methods
+        byte b = Byte.parseByte(str); // String to byte
+        short s = Short.parseShort(str); // String to short
+System.out.println(b + " " + s );
+}
+}
+
+Example 4: Converting Wrapper Objects to Primitive Types
+public class WrapperUnboxingExample {
+    public static void main(String args[]) {
+        // Wrapper objects
+        Integer intObj = Integer.valueOf(100);
+        Double doubleObj = Double.valueOf(20.5);
+        
+        // Unboxing wrapper objects to primitives
+        int i = intObj;  // Unboxing to int
+        double d = doubleObj;  // Unboxing to double
+        
+        System.out.println(i + " " + d);
+    }
+}
+
+
+
+
+
+
+
+
 
