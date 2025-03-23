@@ -1,0 +1,31 @@
+//To create objects, demonstrate use of toString and static
+
+class Sample2
+{
+int rollNumber;
+String name;
+static String classTeacher;
+Sample2(int r,String n)
+{
+    rollNumber = r;
+    name = n;
+}
+static void assignTeacher(String name)
+{
+    classTeacher = name;
+}
+public String toString()
+{
+    return "[" + rollNumber + "," + name +"," +classTeacher +"]";
+}
+public static void main(String[] args)
+{
+    Sample2 s1 = new Sample2(1,"A");
+    Sample2 s2 = new Sample2(2,"B");
+    Sample2.assignTeacher("ABC");
+    System.out.println(s1);
+    System.out.println(s2);
+}
+}
+You used the toString() method to provide a string representation of the object when System.out.println() is called.
+The System.out.println() automatically calls the toString() method on the objects if it is overridden.
