@@ -148,6 +148,60 @@ public class WrapperUnboxingExample {
     }
 }
 
+Simple I/O 
+To read a String from the console, use the following code: 
+Syntax : 
+InputStreamReader  isr = new InputStreamReader(System.in); 
+BufferedReader br  =  new BufferedReader( isr ); 
+Or 
+BufferedReader  br =  new  BufferedReader ( new  InputStreamReader (System.in));
+Or
+  Scanner scanner = new Scanner(System.in);
+
+For this,you will have write the following statement at the beginning: 
+import java.io.*; 
+
+Packages: 
+A package is a collection of related classes and interfaces. It provides a mechanism for 
+compartmentalizing classes. The Java API is organized as a collection of several 
+predefined packages. The java.lang package is the default package included in all java 
+programs. The commonly used packages are: 
+
+Creating a package : 
+To create a user defined package, the package statement should be written in the source 
+code file. This statement should be written as the first line of the program. Save the 
+program in a directory of the same name as the package. 
+Syntax : 
+package packageName; 
+
+Accessing a package 
+To access classes from a package, use the import statement. 
+Syntax : 
+import packageName.*; //importsallclasses 
+import packageName.className; //importsspecifiedclass 
+
+Note that the package can have a hierarchy of subpackages. In that case, the pack age 
+name should be qualified using its parentpackages. 
+Example : 
+project.sourcecode.java 
+Here,the package named project contains one subpackage named source code which 
+contains a subpackage named java. 
+
+Access Rules : 
+The access rules for member so for class are given in the table below. 
+Accessible to  public  protected  private  none
+Same class      Yes      Yes       Yes      Yes 
+Class in         Yes      Yes       No      Yes
+same package
+Sub class(in      Yes      Yes       No      No
+other package)    
+Non sub class      Yes     No        No      No
+in other package 
+
+
+
+
+
 
 
 
