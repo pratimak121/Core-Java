@@ -1,0 +1,75 @@
+/* Define Student class(roll_no, name, percentage) to create n objects of the 
+Student class. Accept details from the user for each object. Define a static 
+method “sortStudent” which sorts the array on the basis of percentage.
+*/
+import java.util.Scanner;
+public class A12
+{
+    int rollno;
+    String name;
+    Double percentage ;
+
+    A12(int rollno,String name,Double percentage)
+    {
+        
+        this.rollno = rollno;
+        this.name = name ;
+        this.percentage = percentage;
+    }
+
+    public static void AcceptDetails(A12[] a,Scanner sc)
+    {
+        for(int i =0;i<a.length;i++)
+        {
+            System.out.println("Enter roll no :");
+           int rollno = sc.nextInt();
+           sc.nextLine();
+            System.out.println("Enter name :");
+           String  name = sc.nextLine();
+            System.out.println("Enter percentage:");
+           Double percentage = sc.nextDouble();
+           a[i] = new A12(rollno,name,percentage);
+        }
+    }
+
+public static void sortStudent(A12[] a)
+{
+    for(int i=0;i<a.length;i++)
+    {
+        for(int j=i+1;j<a.length;j++)
+        {
+            if(a[i].percentage < a[j].percentage)
+        {
+            A12 temp = a[i];
+            a[i] = a[j];
+            a[j] = temp;
+        }
+        }
+        }
+    }
+    public  void DisplayDetail()
+    {
+        
+            System.out.println("Roll :"+rollno +" name :"+ name+" Percentage :"+percentage);
+    
+    }
+        
+    public static void main(String[] args) throws Exception
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter number of student count: ");
+        int n = sc.nextInt();
+        A12[] a = new A12[n]; 
+        AcceptDetails(a,sc);
+           
+        for(A12 obj : a)
+        obj.DisplayDetail();
+
+         sortStudent(a);
+
+          for(A12 obj : a)
+        obj.DisplayDetail();
+
+        sc.close();
+    }
+}
