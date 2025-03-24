@@ -1,0 +1,36 @@
+//  Sample program to create and use packages. 
+//Create folder P1.Save A.java in folder P1.Create folder P2 in side P1.Save B.java in P2. 
+A.java =>
+package P1;
+public class A
+{
+    public void display()
+    {
+        System.out.println("In display of A");
+    }
+}
+//--------------------------
+B.java =>
+package P1.P2;
+public class B
+{
+    public void display()
+    {
+        System.out.println("In display of B");
+    }
+}
+//---------------------------
+import P1.*;
+import P1.P2.*;
+class Sample7
+{
+    public static void main(String[] args)
+    {
+        A obj1 = new A();
+        obj1.display();
+        B obj2 = new B();
+        obj2.display();
+    }
+}
+
+
