@@ -1,0 +1,26 @@
+/*  To demonstrate usage of String methods. */
+public class Sample6
+{
+    public static void main(String[] args)
+    {
+        String s1 = " Hello Java ";
+        String s2 = "Hello";
+        String s3 = "BYEBYE";
+        System.out.println(s1.trim());
+        System.out.println(s1.substring(3,8));
+        System.out.println(s2.concat("world"));
+        System.out.println(s2.replace('e','k'));
+        System.out.println(s3.toLowerCase());
+    }
+}
+
+trim()
+If there are any spaces before the first non-space character or after the last non-space character, they will be removed.
+substring()
+The substring() method allows you to extract a portion of the string between the specified indices. Note that the starting index is inclusive, but the ending index is exclusive.
+concat()
+The concat() method appends the specified string to the original string, and returns a new string.
+replace()
+The replace() method replaces every occurrence of a specified character or substring with a new character or substring.
+toLowerCase()
+The toLowerCase() method returns a new string with all characters converted to lowercase.
