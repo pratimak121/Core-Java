@@ -36,3 +36,87 @@ public class TYMarks
         this.Practicals = Practicals ;
     }
 }
+//---------------------------------
+import SY.SYMarks;
+import TY.TYMarks;
+import java.util.Scanner;
+public class A21
+{
+    int rollNumber;
+    String name;
+    SYMarks symarks;
+    TYMarks tymarks;
+   public A21(int rollNumber,String name,SYMarks symarks,TYMarks tymarks)
+    {
+        this.rollNumber =rollNumber;
+        this.name = name;
+        this.symarks = symarks;
+        this.tymarks = tymarks;
+    }
+    public void DisplayResult()
+    {
+        System.out.println("Roll number :"+rollNumber);
+        System.out.println("Computer Marks SY : "+symarks.ComputerTotal);
+        System.out.println("Computer Marks Theory: "+tymarks.Theory);        
+        System.out.println("Computer Marks Practical : "+tymarks.Practicals);
+        System.out.println("Computer Total Marks : "+calculateTotal());
+        System.out.println("Grade : "+calculateGrade());
+    }
+    public int calculateTotal()
+    {
+        return symarks.ComputerTotal + tymarks.Theory +tymarks.Practicals;
+    }
+    public String calculateGrade()
+    {
+        int total =calculateTotal();
+        if(total >=70)
+        return "A";
+        else if (total >=60)
+        return "B";
+        else if(total>=50)
+        return "C";
+        else if(total >=40)
+        return "Pass";
+        else
+        return "Fail";
+    }
+    
+        public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter number of students :");
+        int n = sc.nextInt();
+        A21[] a = new A21[n];
+        
+        for(int i =0 ;i<n;i++)
+        {
+            System.out.println("Enter roll number: ");
+            int roll = sc.nextInt();
+            sc.nextLine();
+            System.out.println("Enter name :");
+            String name = sc.nextLine();
+            System.out.println("Enter ComputerTotal: ");
+            int ComputerTotal = sc.nextInt();
+            System.out.println("Enter MathsTotal: ");
+            int MathsTotal = sc.nextInt();
+            System.out.println("Enter ElectoronicsTotal: ");
+            int ElectoronicsTotal = sc.nextInt();
+
+            SYMarks s = new SYMarks(ComputerTotal,MathsTotal,ElectoronicsTotal);
+
+            System.out.println("Enter Theory Marks :");
+            int Theory = sc.nextInt();
+            System.out.println("Enter Practical Marks :");
+            int Practical = sc.nextInt();
+
+           TYMarks t = new TYMarks(Theory,Practical);
+            a[i] = new A21(roll,name,s,t);
+            
+        }
+        for(int i = 0;i<n;i++)
+        {
+            a[i].DisplayResult();
+        }
+
+    }
+}
