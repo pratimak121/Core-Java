@@ -1,0 +1,83 @@
+/*
+Define a class CricketPlayer (name,no_of_innings,no_of_times_notout, totatruns, 
+bat_avg). Create an array of n player objects .Calculate the batting average for each 
+player using static method avg(). Define a static sort method which sorts the array on 
+the basis of average. Display the player details in sorted order. 
+*/
+/*
+Batting Average Calculation: Batting average is typically calculated as:
+Batting Average= (Total Runs) / (Number of Innings − Number of Times Not Out)
+*/
+
+import java.util.Scanner;
+import java.util.Arrays;
+public class A22
+{
+  String  name;
+  int no_of_innings;
+  int no_of_times_noout;
+  int totalruns ;
+  double bat_avg;
+
+  public A22(String name, int no_of_innings,int no_of_times_noout,int totalruns)
+{
+   this.name = name ;
+   this.no_of_innings = no_of_innings ;
+   this.no_of_times_noout = no_of_times_noout;
+   this.totalruns =totalruns;
+   this.bat_avg =avg();
+  }
+ 
+ public  double avg()
+ {
+ 
+  //Batting Average= (Total Runs) / (Number of Innings − Number of Times Not Out)
+  if (no_of_innings - no_of_times_noout == 0) {
+            return 0.0;
+        }
+  return bat_avg = (totalruns) /(no_of_innings - no_of_times_noout);
+ }
+ public static void sort(A22[] players)
+ {
+     Arrays.sort(players, (p1, p2) -> Double.compare(p2.bat_avg, p1.bat_avg)); 
+ 
+ }
+ void Display()
+ {
+    System.out.println("Name  :"+name);
+    System.out.println("no_of_innings : "+no_of_innings);
+    System.out.println("no_of_times_noout"+no_of_times_noout);
+    System.out.println("totalruns"+totalruns);
+    System.out.println("bat_avg"+bat_avg);
+ }
+
+  public static void main(String[] args)
+  {
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter no. of players :");
+    int n = sc.nextInt();
+   
+   A22[] a = new A22[n];
+
+   for(int i =0;i<n;i++)
+   {
+     sc.nextLine();
+    System.out.println("Enter name: ");
+    String name = sc.nextLine();
+    System.out.println("no_of_innings :");
+    int no_of_innings = sc.nextInt();
+    System.out.println("no_of_times_notout :");
+    int no_of_times_noout = sc.nextInt();
+    System.out.println("total runs");
+    int totalruns = sc.nextInt();
+   
+    a[i] = new A22(name,no_of_innings,no_of_times_noout,totalruns);
+   }
+    sort(a);
+     System.out.println("Player Details in Sorted Order (by Batting Average):");
+        for (A22 player : a) {
+            player.Display();
+        }
+        sc.close();
+  }
+}
