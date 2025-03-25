@@ -1,0 +1,49 @@
+/*  Write a java program that take input as a person name in the format of first, middle 
+and last name and then print it in the form last, first and middle name, where in the 
+middle name first character is capital letter. */
+
+import java.util.Scanner;
+public class A14
+{
+    public static void main(String[] args)
+    {
+      Scanner sc = new Scanner(System.in); 
+      System.out.println("Enter fullname :"); 
+        String fullname = sc.nextLine().trim();
+        String[] name = fullname.split("\\s+");
+        if(name.length < 2 || name.length > 3 )
+        {
+            System.out.println("Invalid input! Please enter first,middle and last name");
+        }
+        else
+        {
+        String first = name[0]; 
+        String middle = name.length==3 ?name[1]:"";
+        String last = name.length==3?name[2]:name[1];
+        
+      if(!middle.isEmpty())
+      {
+        middle = middle.substring(0,1).toUpperCase() +
+        middle.substring(1).toLowerCase();
+      } 
+      System.out.println("Formatted Name : "+last + ", "+first+ " "+middle);
+      }
+    sc.close();
+    
+    }
+}
+
+
+
+
+
+
+
+
+
+using " "
+It splits only on single spaces
+Multiple spaces create empty array elements
+using "\\s+"
+It collapses multiple spaces into a single separator
+prevent empty array elements
