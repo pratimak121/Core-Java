@@ -1,0 +1,73 @@
+/* Write a package for String operation which has two classes Con and Comp. Con class 
+has to concatenates two strings and comp class compares two strings. Also display 
+proper message on execution. 
+=> StringOperations/
+    Con.java
+    Comp.java
+    Main.java */
+//Com.java
+public class Com
+{
+    private String str1;
+    private String str2;
+
+  public Com(String str1, String str2)
+  {
+    this.str1 = str1;
+    this.str2 = str2;
+  }
+    public void Compare()
+    {
+        if(str1.equals(str2))
+        {
+            System.out.println("The strings are equal");
+        }
+        else
+        {
+            System.out.println("The strings are not equal");
+        }
+
+    }
+}
+//------------------------------------------
+//Conc.java
+public class Conc
+{
+    private String str1;
+    private String str2;
+
+    public Conc(String str1, String str2)
+{
+    this.str1  = str1;
+    this.str2 = str2;
+}
+public void concatenate()
+{
+    String cstr = str1 + str2;
+    System.out.println("Concatenated String:"+cstr);
+}
+} 
+//---------------------------------------
+//Main.java
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter first String");
+        String str1 = sc.nextLine();
+        System.out.println("Enter second String");
+        String str2 = sc.nextLine();
+
+        Conc con = new Conc(str1,str2);
+        con.concatenate();
+
+        Com cm = new Com(str1,str2);
+        cm.Compare();
+
+
+    }
+}
+
+
