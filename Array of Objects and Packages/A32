@@ -1,0 +1,46 @@
+/* Create four member variables for Customer class. Assign public, private, protected 
+and default  access modifiers  respectively to these variables. Try to access these 
+variables from other classes (Same package and Different package) */
+public class samepackage
+{
+    public  static void main(String[]args)
+{
+    A32 a = new A32("Pratima","pass",25,"Wai");
+    System.out.println("Name:"+a.name);
+    //System.out.println("Password:"+a.password); //// private variable (not accessible - compile-time error)
+    System.out.println("Age"+a.age);
+    System.out.println("Address:"+a.address);
+}
+}
+//------------------------------------------
+import StringOperations.A32;
+
+public class diffpackage1
+{
+    public  static void main(String[]args)
+{
+    A32 a = new A32("Pratima","pass",25,"Wai");
+    System.out.println("Name:"+a.name);
+   // System.out.println("Password:"+a.password); // private variable (not accessible - compile-time error)
+    //System.out.println("Age"+a.age); // protected variable (not accessible outside package unless subclass)
+    //System.out.println("Address:"+a.address); // default variable (not accessible outside package)
+}
+}
+//----------------------------------------
+package StringOperations;
+public class A32
+{
+    public String name;
+    private String password;
+    protected int age;
+    String address;
+    public A32(String name,String password,int age,String address)
+    {
+        this.name = name;
+        this.password = password;
+        this.age = age ;
+        this.address = address;
+    }
+   
+
+}
