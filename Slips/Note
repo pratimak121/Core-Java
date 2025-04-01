@@ -45,7 +45,15 @@ table data not showing
 solution -  add semicolon after every sql statement
 
 3) dbname=# (correct)
-error : dbname-# (indicate postgresql stuck still waiting for input)
+error : dbname-# (indicate postgresql stuck still waiting for input) 
+
+4) Error : psqlexception role 'username' does not exits / psqlexception relation 'employee' does not exits
+solution :
+wrong username and table name in java program
+
+5) Error : connection to localhost refuse (service status inactive/dead)
+solution :
+service posgresql start
 
 
 
