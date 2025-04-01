@@ -10,20 +10,22 @@ postgresql-setup --initdb
  * Initialized, logs are in /var/lib/pgsql/initdb_postgresql.log
 
 Alternative :
-sudo -u postgres initdb -D /var/lib/pgsql/16/data/
+sudo -u postgres initdb -D /var/lib/pgsql/16/data/  OR
+initdb name (use)
 
 Error:  
- PostgreSQL Service Fails to Start   OR
+ PostgreSQL database directory not initialized  OR
 Initialization Failure 
 
 step 3.
  systemctl enable --now postgresql
 
 Alternative :
-sudo -u postgres pg_ctl -D /var/lib/pgsql/16/data/ start
+sudo -u postgres pg_ctl -D /var/lib/pgsql/16/data/ start  OR
+service postgresql start (use)
 
 Error: 
-PostgreSQL database directory not initialized OR
+ PostgreSQL Service Fails to Start  OR
 psql: could not connect to server: No such file or directory
 -------------------------------------------------
 su - postgres
