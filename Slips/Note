@@ -1,0 +1,49 @@
+step 1. how to install postgresql in centos stream 10
+dnf -y install postgresql-server
+
+Error :
+PostgreSQL commands won’t exist
+
+step 2.
+postgresql-setup --initdb
+ * Initializing database in '/var/lib/pgsql/data'
+ * Initialized, logs are in /var/lib/pgsql/initdb_postgresql.log
+
+Alternative :
+sudo -u postgres initdb -D /var/lib/pgsql/16/data/
+
+Error:  
+ PostgreSQL Service Fails to Start   OR
+Initialization Failure 
+
+step 3.
+ systemctl enable --now postgresql
+
+Alternative :
+sudo -u postgres pg_ctl -D /var/lib/pgsql/16/data/ start
+
+Error: 
+PostgreSQL database directory not initialized OR
+psql: could not connect to server: No such file or directory
+-------------------------------------------------
+su - postgres
+initdb 
+createdb test
+psql test
+------------------------------------------
+
+
+1)Error : direcory  has wrong permission please make sure direcotory is writable
+solution :
+Check the Current Permissions
+ls -ld /var/lib/pgsql/16/data/
+
+2)Error : select * from table 
+table data not showing 
+solution -  add semicolon after every sql statement
+
+3) dbname=# (correct)
+error : dbname-# (indicate postgresql stuck still waiting for input)
+
+
+
