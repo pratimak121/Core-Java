@@ -1,28 +1,28 @@
 step 1. how to install postgresql in centos stream 10
-dnf -y install postgresql-server
+dnf -y install postgresql-server  (defualt)
 
 Error :
 PostgreSQL commands won’t exist
 
 step 2.
-postgresql-setup --initdb
+postgresql-setup --initdb  (defualt)
  * Initializing database in '/var/lib/pgsql/data'
  * Initialized, logs are in /var/lib/pgsql/initdb_postgresql.log
 
 Alternative :
 sudo -u postgres initdb -D /var/lib/pgsql/16/data/  OR
-initdb name (use)
+initdb name (manually)
 
 Error:  
  PostgreSQL database directory not initialized  OR
 Initialization Failure 
 
 step 3.
- systemctl enable --now postgresql
+ systemctl enable --now postgresql   (defualt)
 
 Alternative :
 sudo -u postgres pg_ctl -D /var/lib/pgsql/16/data/ start  OR
-service postgresql start (use)
+service postgresql start (manually)
 
 Error: 
  PostgreSQL Service Fails to Start  OR
