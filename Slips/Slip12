@@ -1,3 +1,5 @@
 Write a Java program to accept the details of Employee (Eno, EName, Designation,
   Salary) from a user and store it into the database. (Use Swing)
 
+createstatement-
+preparedstatement-
